@@ -9,7 +9,7 @@ public class Camera : IPatch
     public string Name => "Camera Patch";
     public object Description => "Allows adjusting the default camera zoom level.";
 
-    public double ZoomLevel { get; set; } = 2.4;
+    public double ZoomLevel { get; set; } = 1.4;
 
     private List<FileNode> fileNodes = [];
 

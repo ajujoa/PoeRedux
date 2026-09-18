@@ -18,7 +18,7 @@ public partial class MainWindow : Window
     private readonly ObservableCollection<PatchViewModel> _patches;
     private readonly ObservableCollection<ColorModsViewModel> _colorMods;
     private string _ggpkPath = string.Empty;
-    private double _cameraZoom = 2.4;
+    private double _cameraZoom = 1.4;
     private string? _updateDownloadUrl;
 
     public MainWindow()
@@ -237,6 +237,21 @@ public partial class MainWindow : Window
         foreach (var patch in _patches)
         {
             patch.IsSelected = false;
+        }
+    }
+
+    private void EfficiencyButton_Click(object sender, RoutedEventArgs e)
+    {
+        var game = GameSelector?.SelectedIndex == 1 ? PoeGame.PoE2 : PoeGame.PoE1;
+
+        // Efficiency 프리셋 (0-based index). PoE1: 1,2,3,5,10 / PoE2: 1,2,3,4,5,6,7,8,12
+        var preset = game == PoeGame.PoE2
+            ? new HashSet<int> { 0, 1, 2, 3, 4, 5, 6, 7, 11 }
+            : new HashSet<int> { 0, 1, 2, 4, 9 };
+
+        for (int i = 0; i < _patches.Count; i++)
+        {
+            _patches[i].IsSelected = preset.Contains(i);
         }
     }
 
