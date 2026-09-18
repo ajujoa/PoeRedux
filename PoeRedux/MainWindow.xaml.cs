@@ -199,7 +199,31 @@ public partial class MainWindow : Window
     private void GgpkPathTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
     {
         _ggpkPath = GgpkPathTextBox.Text.Trim();
+
+        if (DetectGameFromPath(_ggpkPath) is { } game && GameSelector != null)
+        {
+            GameSelector.SelectedIndex = game == PoeGame.PoE2 ? 1 : 0;
+        }
+
         UpdateStatus();
+    }
+
+    // Detects PoE 1 / PoE 2 from a known install folder name in the selected path.
+    private static PoeGame? DetectGameFromPath(string path)
+    {
+        if (string.IsNullOrWhiteSpace(path))
+            return null;
+
+        foreach (var segment in path.Split(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar))
+        {
+            var name = segment.Trim();
+            if (name.Equals("Path of Exile 2", StringComparison.OrdinalIgnoreCase))
+                return PoeGame.PoE2;
+            if (name.Equals("Path of Exile", StringComparison.OrdinalIgnoreCase))
+                return PoeGame.PoE1;
+        }
+
+        return null;
     }
 
     private void SelectAllButton_Click(object sender, RoutedEventArgs e)
