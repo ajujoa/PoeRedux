@@ -2,7 +2,7 @@
 
 Improved fork of the original [Gineticus/PoeRedux](https://github.com/Gineticus/PoeRedux) project.
 
-## Unreleased (this fork)
+## v1.1.0 (this fork)
 
 ### Added
 - Auto-detect PoE 1/2 from the selected GGPK/index file path (`d8b5e83`)
