@@ -1,5 +1,9 @@
 # PoeRedux
 
+> **This is an improved fork by [ajujoa](https://github.com/ajujoa).**
+> Original project: [Gineticus/PoeRedux](https://github.com/Gineticus/PoeRedux)
+> Added: auto PoE 1/2 detection, Efficiency preset, default camera zoom 1.4 — see [CHANGELOG.md](CHANGELOG.md).
+
 ![Window](Images/window.png)
 
 ## Features
