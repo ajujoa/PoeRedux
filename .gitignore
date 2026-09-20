@@ -402,3 +402,6 @@ FodyWeavers.xsd
 
 # oo2core libraries
 oo2core/
+
+# local release artifacts (built binaries, not committed)
+release/
