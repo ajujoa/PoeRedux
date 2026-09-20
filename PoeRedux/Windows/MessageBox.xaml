@@ -1,7 +1,7 @@
 <Window x:Class="PoeRedux.MessageBox"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="PoE Redux rev1.1" 
+        Title="PoE Redux 개선판" 
         Height="200" 
         Width="400"
         WindowStartupLocation="CenterOwner"
