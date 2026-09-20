@@ -1,7 +1,7 @@
 ﻿<Window x:Class="PoeRedux.ColorModsEditor"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="PoE Redux"
+        Title="PoE Redux rev1.1"
         Height="610"
         Width="800"
         WindowStartupLocation="CenterOwner"
